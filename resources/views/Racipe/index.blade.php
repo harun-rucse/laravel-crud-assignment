@@ -15,7 +15,7 @@
                         {{-- demo food recipe image in a div --}}
                         <div class="flex justify-center">
                             {{-- get a randomly image from food1 food2 food3 --}}
-                            
+
                             <img src="{{ asset('images/food1.jpg') }}" alt="food1" class="w-full">
                         </div>
 
@@ -25,18 +25,19 @@
                     </div>
                     <div class="px-6 py-4">
                         @foreach ($recipe->ingradients as $ingradient)
-                            <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
-                                {{$ingradient->name}}
+                            <span
+                                class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2">
+                                {{ $ingradient->name }}
                             </span>
                         @endforeach
-                        {{-- create a button named instructions which will open a drawer --}}
-                        <button class="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold hover:bg-red-600 text-white mr-2">
+
+                        <a href="{{ route('recipes.show', $recipe->id) }}"
+                            class="inline-block bg-red-500 rounded-full px-3 py-1 text-sm font-semibold hover:bg-red-600 text-white mr-2">
                             View Details
-                        </button>
+                        </a>
 
                     </div>
                 </div>
             </div>
         @endforeach
-    
-@endsection
+    @endsection
