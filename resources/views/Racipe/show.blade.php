@@ -20,6 +20,13 @@
                     </p>
                 </div>
             </div>
+            <form action="{{ route('recipes.destroy', $recipe->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit"
+                    class="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded mt-4">Delete
+                    recipe</button>
+            </form>
         </div>
         <div class="px-4 py-4 flex-1">
             <h3 class="text-2xl mb-3">Ingredients List:</h3>

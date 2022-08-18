@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     @yield('title')
     @vite('resources/css/app.css')
 </head>
+
 <body>
     <div class="main_wrapper flex flex-col">
         <div>
@@ -18,4 +20,6 @@
         </div>
     </div>
 </body>
+@yield('js')
+
 </html>

@@ -3,7 +3,18 @@
     <title>Recipeis</title>
 @endsection
 @section('body')
-    {{-- create a list of card views using tailwind --}}
+    {{-- show success message --}}
+    @if (session('success'))
+        <div id="message" class="bg-green-500 text-white text-center font-bold py-2 px-4 rounded mt-4">
+            {{ session('success') }}
+        </div>
+    @endif
+    {{-- create recipe button using talwind css --}}
+    <div class="flex m-4">
+        <a href="{{ route('recipes.create') }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+            Create Recipe
+        </a>
+    </div>
     <div class="flex flex-wrap justify-center">
         @foreach ($himus as $recipe)
             <div class="w-full max-w-sm m-2">
@@ -40,4 +51,13 @@
                 </div>
             </div>
         @endforeach
-    @endsection
+    </div>
+@endsection
+
+@section('js')
+    <script>
+        setTimeout(() => {
+            document.getElementById('message').remove();
+        }, 3000);
+    </script>
+@endsection
